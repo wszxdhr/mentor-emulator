@@ -1,0 +1,22 @@
+{
+  "name": "@mentor/server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n tsc,server -c yellow,magenta \"tsc -p tsconfig.json --watch --preserveWatchOutput\" \"bash -lc 'while [ ! -f dist/index.js ]; do sleep 0.2; done; node --watch dist/index.js'\"",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@koa/router": "^13.1.0",
+    "koa": "^2.15.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa__cors": "^3.3.1",
+    "@types/koa__router": "^12.0.4",
+    "tsx": "^4.19.2"
+  }
+}
